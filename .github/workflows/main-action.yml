@@ -1,14 +1,15 @@
 name: main action
 on:
   schedule:
-    - cron: '0/30 * * * *'
+    - cron: '0/5 * * * *'
 
 jobs:
   test_schedule_0:
     runs-on: ubuntu-latest
     steps:
       - name: get latest data
-        run: echo "getting data..." && curl "http://example.com" -o "/tmp/ar.txt" && cat "/tmp/ar.txt"
+      #  run: echo "getting data..." && curl "http://example.com" -o "/tmp/ar.txt" && cat "/tmp/ar.txt"
+        run: ls
       - name: update local data
         run: echo "updating data!"
       #- name: Every time

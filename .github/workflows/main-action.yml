@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: get latest data
       #  run: echo "getting data..." && curl "http://example.com" -o "/tmp/ar.txt" && cat "/tmp/ar.txt"
-        run: echo "$(ls)"
+        run: echo "$(pwd)"
       - name: ls 2
         run: echo "$(ls ${{ github.workspace }})"
       - name: update local data

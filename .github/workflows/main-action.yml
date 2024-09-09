@@ -5,11 +5,15 @@ on:
 
 jobs:
   test_schedule_0:
+    permissions:
+      contents: read #write
     runs-on: ubuntu-latest
     steps:
       - name: get latest data
       #  run: echo "getting data..." && curl "http://example.com" -o "/tmp/ar.txt" && cat "/tmp/ar.txt"
         run: ls
+      - name: ls 2
+        run: ls ${{ github.workspace }}
       - name: update local data
         run: echo "updating data!"
       #- name: Every time

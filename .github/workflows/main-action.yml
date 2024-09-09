@@ -1,7 +1,7 @@
 name: main action
 on:
   schedule:
-    #- cron: '0/5 * * * *'
+    - cron: '0/5 * * * *'
 
 jobs:
   test_schedule_0:
@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: get latest data
       #  run: echo "getting data..." && curl "http://example.com" -o "/tmp/ar.txt" && cat "/tmp/ar.txt"
-        run: ls
+        run: echo "$(ls)"
       - name: ls 2
-        run: ls ${{ github.workspace }}
+        run: echo "$(ls ${{ github.workspace }})"
       - name: update local data
         run: echo "updating data!"
       #- name: Every time

@@ -1,7 +1,7 @@
 name: main action
 on:
   schedule:
-    - cron: '0/5 * * * *'
+    #- cron: '0/5 * * * *'
 
 jobs:
   test_schedule_0:

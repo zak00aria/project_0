@@ -19,4 +19,6 @@ jobs:
       - run: ls ./data
       - name: save changes
         uses: mikael/publish-to-github-actions@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       

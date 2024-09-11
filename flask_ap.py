@@ -5,8 +5,8 @@ from werkzeug.utils import secure_filename
 
 def allowed_file(filename):
     return '.' in filename and \
+            filename.rsplit('.', 1)[0].lower() in {'_arabic', '_english'} and \
             filename.rsplit('.', 1)[1].lower() in {'json'}
-
 
 app = Flask(__name__)
 

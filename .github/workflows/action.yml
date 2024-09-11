@@ -1,1 +1,13 @@
+name: action
+on:
+  schedule:
+    - cron: '0/5 * * * *'
 
+jobs:
+  update_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: update latest arabic data
+        run: ls

@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: update latest arabic data
         run: curl -o "/tmp/_arabic.json" "https://mp3quran.net/api/v3/reciters?language=ar"
-        run: curl -F "file=@/tmp/_arabic.json" "https://za00ko.pythonanywhere.com/update_data"
+      - run: curl -F "file=@/tmp/_arabic.json" "https://za00ko.pythonanywhere.com/update_data"
       - name: update latest english data
         run: curl -o "/tmp/_english.json" "https://mp3quran.net/api/v3/reciters?language=eng"
-        run: curl -F "file=@/tmp/_english.json" "https://za00ko.pythonanywhere.com/update_data"
+      - run: curl -F "file=@/tmp/_english.json" "https://za00ko.pythonanywhere.com/update_data"

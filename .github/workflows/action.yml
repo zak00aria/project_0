@@ -4,7 +4,7 @@ on:
     branches: 
     - master
   schedule:
-    - cron: '5 * 5 9 *'
+    - cron: '20 1 1 1-12 *'
 
 jobs:
   update_data:
@@ -17,4 +17,6 @@ jobs:
       - name: update latest arabic data
         run: curl -o "./data/_arabic.json" "https://mp3quran.net/api/v3/reciters?language=ar"
       - run: ls ./data
+      - name: save changes
+        uses: mikael/publish-to-github-actions@master
       

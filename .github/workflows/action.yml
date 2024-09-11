@@ -13,11 +13,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
       - name: update latest arabic data
-        run: ls
-      - name: update latest arabic data
         run: curl -o "./data/_arabic.json" "https://mp3quran.net/api/v3/reciters?language=ar"
-      - run: ls ./data
-      - name: save changes
+      - name: update latest english data
+        run: curl -o "./data/_english.json" "https://mp3quran.net/api/v3/reciters?language=eng"
+      - name: push changes
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{secrets.G_TOKEN}}
